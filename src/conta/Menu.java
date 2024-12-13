@@ -2,22 +2,36 @@ package conta;
 
 import java.util.Scanner;
 
-import conta.model.Conta;
+import conta.model.ContaCorrente;
+import conta.model.ContaPoupanca;
 import conta.util.Cores;
 
 public class Menu {
 
 	public static void main(String[] args) {
 
-		// Instanciamento | Classe -> Objeto Utilizavel
-		Conta conta1 = new Conta(123456, 0001, 1, "Maria das Neves", 500f);
-		conta1.visualizar();
-		conta1.sacar(12000.0f);
-		conta1.visualizar();
-		conta1.depositar(5000.0f);
-		conta1.visualizar();
+		
 
-		// System.out.println("Saldo da conta é " + conta1.getSaldo());
+		//Instanciamento/ Instancia da Classe ContaCorrente
+		ContaCorrente contac1 = new ContaCorrente(1234567, 0002, 1, "Maria de lurdes", 600f, 7000f);
+		contac1.visualizar();
+		
+		//Instanciamento/ Instancia da Classe ContaCorrente com limite fixo
+		ContaCorrente contac2 = new ContaCorrente(022, 00022, 1, "Francisca", 10f);
+		contac2.visualizar(); // faz visualizar todos os atributos já informados
+		contac2.sacar(5f);
+		contac2.visualizar(); // faz visualizar todos os atributos já informados + o valor depois de sacar
+		contac2.depositar(100f);
+		contac2.visualizar(); // faz visualizar todos os atributos já informados + o valor depois de depositar
+		
+		
+		//Instanciamento / Intancia da Classe Conta Poupança + incluindo o metodo sacar, depositar e visualizar.
+		ContaPoupanca contap1 = new ContaPoupanca(00342, 0023, 2, "Ana", 12000f, "03/09/2002");
+		contap1.visualizar();
+		contap1.sacar(5000f);
+		contap1.visualizar();
+		contap1.depositar(100000f);
+		contap1.visualizar();
 
 		Scanner leia = new Scanner(System.in);
 		
